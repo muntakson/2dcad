@@ -10,6 +10,7 @@ pub mod cache;
 pub mod convert;
 pub mod creation_style;
 pub(crate) mod frame;
+pub mod model;
 pub mod pick;
 pub mod pipeline;
 pub(crate) mod render_graph;

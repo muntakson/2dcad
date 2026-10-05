@@ -1,7 +1,9 @@
 // Draw module — Draw, Modify, Annotation and Layer tools.
 
+mod changelog;
 pub mod clipboard;
 pub mod defaults;
+mod donate;
 pub mod draw;
 pub mod fence;
 pub mod units;

@@ -7,6 +7,7 @@ pub mod file_association;
 pub mod font_repo;
 #[cfg(not(target_arch = "wasm32"))]
 pub mod edit_lock;
+pub mod obj;
 pub mod ole_embed;
 #[cfg(not(target_arch = "wasm32"))]
 pub mod single_instance;
@@ -14,6 +15,8 @@ pub mod pdf_export;
 pub mod plot_style;
 pub mod print_to_printer;
 pub mod recovery;
+pub mod step;
+pub mod stl;
 pub mod xref;
 pub mod xref_model;
 pub mod linetypes;

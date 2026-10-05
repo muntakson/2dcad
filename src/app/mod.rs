@@ -24,11 +24,13 @@ mod find_replace;
 pub(crate) mod helpers;
 mod history;
 mod layers;
+mod model_ops;
 mod navigation;
 mod node_graph;
 mod mtext_editor;
 #[cfg(not(target_arch = "wasm32"))]
 pub mod plugin_host;
+mod presspull_ops;
 mod properties;
 mod recent;
 mod record_api;

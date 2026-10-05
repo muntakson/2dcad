@@ -1,5 +1,6 @@
-// Insert module — references, blocks, attributes, import, content.
+// Insert module — references, point clouds, blocks, attributes, import, content.
 
+pub(crate) mod cadastral;
 mod attdef;
 mod attedit;
 mod attman;
@@ -11,19 +12,23 @@ mod design_center;
 mod edit_block;
 pub(crate) mod image_transparency;
 pub(crate) mod insert_block;
+mod landxml;
 pub(crate) mod picker;
 pub mod minsert;
+mod mview_block;
+mod open_obj;
+mod pc_attach;
 pub(crate) mod pdf_attach;
 pub(crate) mod pdf_clip;
 pub(crate) mod pdf_import;
 mod snap_underlays;
+pub(crate) mod solid3d_cmds;
 mod underlay_layers;
 pub(crate) mod wblock;
 mod xadjust;
 pub(crate) mod xattach;
 pub(crate) mod xref_cmd;
 pub(crate) mod xclip;
-mod clear;
 
 use crate::modules::{CadModule, IconKind, RibbonGroup, RibbonItem};
 
@@ -49,6 +54,7 @@ impl CadModule for InsertModule {
                     title: "Reference",
                     tools: vec![
                         RibbonItem::LargeTool(xattach::tool()),
+                        // PDF, DWF or DGN; the face runs the last one chosen.
                         RibbonItem::LargeDropdown {
                             id: "UNDERLAY_ATTACH",
                             label: "Attach Underlay",
@@ -63,6 +69,7 @@ impl CadModule for InsertModule {
                         RibbonItem::LargeTool(xclip::tool()),
                         RibbonItem::LargeTool(xadjust::tool()),
                         RibbonItem::LabeledTool(underlay_layers::tool()),
+                        // An empty label shows the chosen item's.
                         RibbonItem::LabeledDropdown {
                             id: "FRAMES_DROPDOWN",
                             label: "",
@@ -71,6 +78,8 @@ impl CadModule for InsertModule {
                                 ("FRAMES0", "Hide frames", FRAMES_ICON),
                                 ("FRAMES1", "Display and plot frames", FRAMES_ICON),
                                 ("FRAMES2", "Display but don't plot frames", FRAMES_ICON),
+                                // Shown (not selectable) while the frame
+                                // variables differ from each other.
                                 ("FRAMES3", "*Frames vary*", FRAMES_ICON),
                             ],
                             default: "FRAMES1",
@@ -87,10 +96,16 @@ impl CadModule for InsertModule {
                         },
                     ],
                 },
+                // ── Point Cloud ───────────────────────────────────────────────────
+                RibbonGroup {
+                    title: "Point Cloud",
+                    tools: vec![RibbonItem::LargeTool(pc_attach::tool())],
+                },
                 // ── Block ─────────────────────────────────────────────────────────
                 RibbonGroup {
                     title: "Block",
                     tools: vec![
+                        RibbonItem::LargeTool(mview_block::tool()),
                         RibbonItem::LargeTool(insert_block::tool()),
                         RibbonItem::Tool(create_block::tool()),
                         RibbonItem::Tool(edit_block::tool()),
@@ -111,7 +126,9 @@ impl CadModule for InsertModule {
                 RibbonGroup {
                     title: "Import",
                     tools: vec![
-                        RibbonItem::LargeTool(pdf_import::tool()),
+                        RibbonItem::LargeTool(open_obj::tool()),
+                        RibbonItem::LargeTool(landxml::tool()),
+                        RibbonItem::LargeTool(cadastral::tool()),
                     ],
                 },
                 // ── Content ───────────────────────────────────────────────────────

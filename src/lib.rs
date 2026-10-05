@@ -2,10 +2,12 @@
 #![recursion_limit = "512"]
 
 pub mod app;
+pub mod cadastral;
 #[cfg(not(target_arch = "wasm32"))]
 pub mod cli;
 pub mod command;
 pub mod config;
+pub mod discussions;
 pub mod entities;
 #[cfg(not(target_arch = "wasm32"))]
 pub mod gpu_backend;
@@ -18,6 +20,7 @@ pub mod modules;
 #[cfg(not(target_arch = "wasm32"))]
 pub(crate) mod network;
 pub mod par;
+pub mod patreon;
 pub mod perf;
 pub mod plugin;
 #[cfg(not(target_arch = "wasm32"))]
@@ -26,3 +29,4 @@ pub mod scene;
 pub mod snap;
 pub mod sys;
 pub mod ui;
+pub mod videos;

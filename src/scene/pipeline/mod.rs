@@ -15,16 +15,21 @@ macro_rules! draw_order_shader {
 
 #[cfg(test)]
 mod gpu_tests;
+#[cfg(test)]
+mod depth_tests;
 mod device_capabilities;
 pub mod circle_gpu;
 pub mod ellipse_gpu;
+pub mod face3d_gpu;
 pub mod gpu_budget;
 pub mod gpu_upload;
 pub mod hatch_gpu;
 pub mod wipeout_gpu;
 pub mod image_gpu;
+pub mod mesh_gpu;
 pub mod text_gpu;
 pub mod uniforms;
+pub mod viewcube;
 /// Persistent per-entity wire instance arena. Its indexed-storage and packed
 /// adapters share the same patch/cull lifecycle across native, WebGPU, and
 /// WebGL2.
@@ -36,10 +41,17 @@ use iced::{Rectangle, Size};
 
 pub use circle_gpu::{CircleGpu, CircleInstance};
 pub use ellipse_gpu::{EllipseGpu, EllipseInstance};
+pub use face3d_gpu::Face3DGpu;
 pub use wipeout_gpu::WipeoutGpu;
 pub use image_gpu::ImageGpu;
 pub use uniforms::Uniforms;
+pub use viewcube::ViewCubePipeline;
 pub use wire_gpu::{BlockWireGpu, WireGpu};
+
+use crate::scene::model::hatch_model::HatchModel;
+use crate::scene::model::image_model::ImageModel;
+use crate::scene::model::mesh_model::MeshLodSet;
+use crate::scene::model::wire_model::WireModel;
 
 /// Worst-case raster depth bias (in 24-bit quanta, toward the camera) block
 /// text is required to clear. The wipeout pipeline currently carries no bias
