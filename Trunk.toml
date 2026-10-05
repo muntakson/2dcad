@@ -1,0 +1,27 @@
+# Trunk config for the web (wasm) build of DNABOY CAD (issue #45).
+#
+# Build:   trunk build --release
+# Dev:     trunk serve
+#
+# Requires: rustup target add wasm32-unknown-unknown
+#           cargo install trunk wasm-bindgen-cli
+
+[build]
+target = "index.html"
+dist = "dist"
+public_url = "/"
+# The crate has no Cargo features: the geometry kernel is pure Rust and
+# cross-compiles to wasm, so the web build gets the same solid modelling the
+# native one does.
+
+[[hooks]]
+stage = "post_build"
+command = "sh"
+command_arguments = ["scripts/build-web-worker.sh"]
+
+[serve]
+address = "0.0.0.0"
+# Cross-origin isolation headers enable SharedArrayBuffer, which wasm threads
+# (rayon) need. GitHub Pages cannot set these; a self-hosted server (e.g. the
+# Open-AEC host) can. Without them the app still runs single-threaded.
+headers = { "Cross-Origin-Opener-Policy" = "same-origin", "Cross-Origin-Embedder-Policy" = "require-corp" }

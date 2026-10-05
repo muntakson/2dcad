@@ -1,0 +1,86 @@
+{
+  "ar-SA": {
+    "title": "DNABOY CAD — الويب",
+    "loading": "جارٍ التحميل…"
+  },
+  "bg-BG": {
+    "title": "DNABOY CAD — Уеб",
+    "loading": "Зареждане…"
+  },
+  "cs-CZ": {
+    "title": "DNABOY CAD — Web",
+    "loading": "Načítání…"
+  },
+  "de-DE": {
+    "title": "DNABOY CAD — Web",
+    "loading": "Wird geladen…"
+  },
+  "el-GR": {
+    "title": "DNABOY CAD — Ιστός",
+    "loading": "Φόρτωση…"
+  },
+  "en-US": {
+    "title": "DNABOY CAD Web App",
+    "loading": "Loading…"
+  },
+  "es-ES": {
+    "title": "DNABOY CAD — Web",
+    "loading": "Cargando…"
+  },
+  "fi-FI": {
+    "title": "DNABOY CAD — Web",
+    "loading": "Ladataan…"
+  },
+  "fr-FR": {
+    "title": "DNABOY CAD — Site Web",
+    "loading": "Chargement…"
+  },
+  "hi-IN": {
+    "title": "DNABOY CAD — वेब",
+    "loading": "लोड हो रहा है…"
+  },
+  "hu-HU": {
+    "title": "DNABOY CAD — Web",
+    "loading": "Betöltés…"
+  },
+  "it-IT": {
+    "title": "DNABOY CAD — Rete",
+    "loading": "Caricamento…"
+  },
+  "ja-JP": {
+    "title": "DNABOY CAD — Web",
+    "loading": "読み込み中…"
+  },
+  "ko-KR": {
+    "title": "DNABOY CAD — 웹",
+    "loading": "로드 중…"
+  },
+  "nl-NL": {
+    "title": "DNABOY CAD — Web",
+    "loading": "Laden…"
+  },
+  "pl-PL": {
+    "title": "DNABOY CAD — Sieć",
+    "loading": "Ładowanie…"
+  },
+  "pt-BR": {
+    "title": "DNABOY CAD — Web",
+    "loading": "Carregando…"
+  },
+  "ru-RU": {
+    "title": "DNABOY CAD — Веб-сайт",
+    "loading": "Загрузка…"
+  },
+  "tr-TR": {
+    "title": "DNABOY CAD — Web",
+    "loading": "Yükleniyor…"
+  },
+  "zh-CN": {
+    "title": "DNABOY CAD — Web",
+    "loading": "正在加载…"
+  },
+  "zh-TW": {
+    "title": "DNABOY CAD — Web",
+    "loading": "載入中…"
+  }
+}
