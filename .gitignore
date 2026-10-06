@@ -44,3 +44,6 @@ __pycache__/
 
 # macOS Finder metadata
 .DS_Store
+
+# Proprietary shop app (separate repo)
+shop/

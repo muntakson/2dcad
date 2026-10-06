@@ -1,0 +1,23 @@
+LaserCAD 2D
+Copyright (c) 2025-2026 내남레이저
+
+This program is a derivative work of OpenCAD Studio by Hakan Seven,
+originally available at:
+
+  https://github.com/HakanSeven12/OpenCadStudio
+
+OpenCAD Studio is licensed under the GNU General Public License v3.0.
+
+This derivative work is also licensed under GPLv3. See the LICENSE file
+for the full license text.
+
+The following upstream libraries by the same author are used as
+dependencies (each under its own license — see their respective repos):
+
+  - opencadcodec   https://github.com/HakanSeven12/opencadcodec
+  - opencadkernel   https://github.com/HakanSeven12/opencadkernel
+  - opencadgraph    https://github.com/HakanSeven12/opencadgraph
+  - iced_aw (fork)  https://github.com/HakanSeven12/iced_aw
+
+The vendored patch at patches/naga-29.0.4/ is derived from naga
+(https://github.com/gfx-rs/naga), dual-licensed MIT / Apache-2.0.

@@ -5,6 +5,9 @@ edition = "2021"
 build = "build.rs"
 default-run = "LaserCAD2D"
 description = "2D laser-cut DXF drawing web app for CNC machine shops"
+license = "GPL-3.0-only"
+authors = ["내남레이저"]
+repository = "https://github.com/muntakson/2dcad"
 
 [workspace]
 members = [
