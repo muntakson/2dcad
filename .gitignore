@@ -47,3 +47,8 @@ __pycache__/
 
 # Proprietary shop app (separate repo)
 shop/
+
+# Internal deployment config (contains IPs and infra details)
+CLAUDE.md
+naenam-2dcad.conf
+2dcad.dnaboy.org.nginx
